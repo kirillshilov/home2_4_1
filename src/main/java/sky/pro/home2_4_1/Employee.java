@@ -3,23 +3,14 @@ package sky.pro.home2_4_1;
 import java.util.Objects;
 
 public class Employee {
-    String firstName;
-    String lastName;
-
+    private String firstName;
+    private String lastName;
 
     public Employee(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-
     }
 
-    public String getName() {
-        return firstName;
-    }
-
-    public String getlastName() {
-        return lastName;
-    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -39,6 +30,14 @@ public class Employee {
                 "name='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 }
 

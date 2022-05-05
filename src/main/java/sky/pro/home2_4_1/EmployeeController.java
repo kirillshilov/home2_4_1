@@ -7,12 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/employee")
-public class Controller {
-    public final EmployeeServisimpl service;
+public class EmployeeController {
+    private final EmployeeServis service;
 
-    public Controller(EmployeeServisimpl service) {
+    private EmployeeController(EmployeeServis service) {
         this.service = service;
     }
+
     @GetMapping("/add")
     public Employee addEmployee(@RequestParam String firstName, @RequestParam String lastName) {
         return service.addEmployee(firstName, lastName);
@@ -26,5 +27,9 @@ public class Controller {
     @GetMapping("/find")
     public Employee findEmployee(@RequestParam String firstName, @RequestParam String lastName) {
         return service.findEmployee(firstName, lastName);
+    }
+    @GetMapping ( "/show")
+    public String show () {
+        return service.listOfEmployee();
     }
 }
